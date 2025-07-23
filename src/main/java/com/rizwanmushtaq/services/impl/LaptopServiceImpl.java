@@ -4,9 +4,11 @@ import com.rizwanmushtaq.entities.Laptop;
 import com.rizwanmushtaq.repositories.LaptopRepository;
 import com.rizwanmushtaq.services.LaptopService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LaptopServiceImpl implements LaptopService {
   @Autowired
   private LaptopRepository laptopRepository;

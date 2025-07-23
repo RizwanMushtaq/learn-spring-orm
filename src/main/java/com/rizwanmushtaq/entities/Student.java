@@ -10,8 +10,16 @@ public class Student {
   private int id;
   private String name;
   private String email;
-  @OneToOne(mappedBy = "student")
+  @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
   private Laptop laptop;
+
+  public Laptop getLaptop() {
+    return laptop;
+  }
+
+  public void setLaptop(Laptop laptop) {
+    this.laptop = laptop;
+  }
 
   public int getId() {
     return id;
@@ -35,5 +43,14 @@ public class Student {
 
   public void setEmail(String email) {
     this.email = email;
+  }
+
+  @Override
+  public String toString() {
+    return "Student{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", email='" + email + '\'' +
+        '}';
   }
 }

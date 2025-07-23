@@ -13,6 +13,14 @@ public class Laptop {
   @OneToOne
   private Student student;
 
+  public Student getStudent() {
+    return student;
+  }
+
+  public void setStudent(Student student) {
+    this.student = student;
+  }
+
   public int getId() {
     return id;
   }
@@ -35,5 +43,14 @@ public class Laptop {
 
   public void setModel(String model) {
     this.model = model;
+  }
+
+  @Override
+  public String toString() {
+    return "Laptop{" +
+        "id=" + id +
+        ", brand='" + brand + '\'' +
+        ", model='" + model + '\'' +
+        '}';
   }
 }

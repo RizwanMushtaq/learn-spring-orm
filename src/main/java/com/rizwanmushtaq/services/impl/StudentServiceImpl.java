@@ -4,9 +4,11 @@ import com.rizwanmushtaq.entities.Student;
 import com.rizwanmushtaq.repositories.StudentRepository;
 import com.rizwanmushtaq.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StudentServiceImpl implements StudentService {
   @Autowired
   private StudentRepository studentRepository;
