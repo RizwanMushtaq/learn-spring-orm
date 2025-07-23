@@ -24,6 +24,22 @@ public class Address {
     this.street = street;
   }
 
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public Student getStudent() {
+    return student;
+  }
+
+  public void setStudent(Student student) {
+    this.student = student;
+  }
+
   public String getCity() {
     return city;
   }
@@ -51,10 +67,11 @@ public class Address {
   @Override
   public String toString() {
     return "Address{" +
-        "street='" + street + '\'' +
-        ", city='" + city + '\'' +
+        "zipCode='" + zipCode + '\'' +
         ", state='" + state + '\'' +
-        ", zipCode='" + zipCode + '\'' +
+        ", city='" + city + '\'' +
+        ", street='" + street + '\'' +
+        ", id=" + id +
         '}';
   }
 }

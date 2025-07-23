@@ -26,6 +26,14 @@ public class Student {
     this.laptop = laptop;
   }
 
+  public List<Address> getAddressList() {
+    return addressList;
+  }
+
+  public void setAddressList(List<Address> addressList) {
+    this.addressList = addressList;
+  }
+
   public int getId() {
     return id;
   }

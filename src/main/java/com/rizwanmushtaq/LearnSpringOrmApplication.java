@@ -1,6 +1,8 @@
 package com.rizwanmushtaq;
 
+import com.rizwanmushtaq.entities.Address;
 import com.rizwanmushtaq.entities.Student;
+import com.rizwanmushtaq.services.AddressService;
 import com.rizwanmushtaq.services.LaptopService;
 import com.rizwanmushtaq.services.StudentService;
 import com.rizwanmushtaq.services.UserService;
@@ -17,6 +19,8 @@ public class LearnSpringOrmApplication implements CommandLineRunner {
   private StudentService studentService;
   @Autowired
   private UserService userService;
+  @Autowired
+  private AddressService addressService;
 
   public static void main(String[] args) {
     SpringApplication.run(LearnSpringOrmApplication.class, args);
@@ -28,13 +32,22 @@ public class LearnSpringOrmApplication implements CommandLineRunner {
     Student student = new Student();
     student.setName("John");
     student.setEmail("test@john.com");
-//    Laptop laptop = new Laptop();
-//    laptop.setBrand("Dell");
-//    laptop.setModel("Inspiron 15");
-//    laptop.setStudent(student);
-//    student.setLaptop(laptop);
-//    studentService.saveStudent(student);
-//    System.out.println(studentService.getAllStudents());
-//    System.out.println(laptopService.getAllLaptops());
+    Address address = new Address();
+    address.setStreet("123 Main St");
+    address.setCity("New York");
+    address.setState("NY");
+    address.setZipCode("10001");
+    Address address2 = new Address();
+    address2.setStreet("456 Elm St");
+    address2.setCity("Los Angeles");
+    address2.setState("CA");
+    address2.setZipCode("90001");
+    student.getAddressList().add(address);
+    student.getAddressList().add(address2);
+    address.setStudent(student);
+    address2.setStudent(student);
+    studentService.saveStudent(student);
+    System.out.println(studentService.getAllStudents());
+    System.out.println(addressService.getAllAddresses());
   }
 }
