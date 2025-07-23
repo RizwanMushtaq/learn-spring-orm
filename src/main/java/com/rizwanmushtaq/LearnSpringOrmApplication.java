@@ -1,6 +1,6 @@
 package com.rizwanmushtaq;
 
-import com.rizwanmushtaq.entities.User;
+import com.rizwanmushtaq.entities.Student;
 import com.rizwanmushtaq.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,16 +18,7 @@ public class LearnSpringOrmApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    User user = new User();
-    user.setName("Updated Rizwan Mushtaq");
-    user.setEmail("updated rizwan@gmail.com");
-//    user.setCity("Srinagar");
-//    user.setAge(30);
-//    User savedUser = userService.updateUser(user, 202);
-//    System.out.println(savedUser);
-//    userService.getAllUsers().forEach(System.out::println);
-//    System.out.println(userService.getUserById(1));
-//    System.out.println(userService.getUserById(20));
-    System.out.println(userService.deleteUser(20));
+    System.out.println("Application started...");
+    Student student = new Student();
   }
 }
