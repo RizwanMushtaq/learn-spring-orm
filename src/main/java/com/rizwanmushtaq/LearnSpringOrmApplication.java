@@ -1,6 +1,5 @@
 package com.rizwanmushtaq;
 
-import com.rizwanmushtaq.entities.Laptop;
 import com.rizwanmushtaq.entities.Student;
 import com.rizwanmushtaq.services.LaptopService;
 import com.rizwanmushtaq.services.StudentService;
@@ -27,15 +26,15 @@ public class LearnSpringOrmApplication implements CommandLineRunner {
   public void run(String... args) throws Exception {
     System.out.println("Application started...");
     Student student = new Student();
-    student.setName("Rizwan");
-    student.setEmail("test@h.com");
-    Laptop laptop = new Laptop();
-    laptop.setBrand("Dell");
-    laptop.setModel("Inspiron 15");
-    laptop.setStudent(student);
-    student.setLaptop(laptop);
-    studentService.saveStudent(student);
-    System.out.println(studentService.getAllStudents());
-    System.out.println(laptopService.getAllLaptops());
+    student.setName("John");
+    student.setEmail("test@john.com");
+//    Laptop laptop = new Laptop();
+//    laptop.setBrand("Dell");
+//    laptop.setModel("Inspiron 15");
+//    laptop.setStudent(student);
+//    student.setLaptop(laptop);
+//    studentService.saveStudent(student);
+//    System.out.println(studentService.getAllStudents());
+//    System.out.println(laptopService.getAllLaptops());
   }
 }

@@ -2,6 +2,9 @@ package com.rizwanmushtaq.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "students")
 public class Student {
@@ -12,6 +15,8 @@ public class Student {
   private String email;
   @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
   private Laptop laptop;
+  @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+  private List<Address> addressList = new ArrayList<>();
 
   public Laptop getLaptop() {
     return laptop;
