@@ -1,9 +1,8 @@
 package com.rizwanmushtaq;
 
-import com.rizwanmushtaq.services.AddressService;
-import com.rizwanmushtaq.services.LaptopService;
-import com.rizwanmushtaq.services.StudentService;
-import com.rizwanmushtaq.services.UserService;
+import com.rizwanmushtaq.entities.Category;
+import com.rizwanmushtaq.entities.Product;
+import com.rizwanmushtaq.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,6 +18,8 @@ public class LearnSpringOrmApplication implements CommandLineRunner {
   private UserService userService;
   @Autowired
   private AddressService addressService;
+  @Autowired
+  private CategoryService categoryService;
 
   public static void main(String[] args) {
     SpringApplication.run(LearnSpringOrmApplication.class, args);
@@ -47,5 +48,29 @@ public class LearnSpringOrmApplication implements CommandLineRunner {
 //    studentService.saveStudent(student);
 //    System.out.println(studentService.getAllStudents());
 //    System.out.println(addressService.getAllAddresses());
+    Category category1 = new Category();
+    category1.setName("Electronics1");
+    Category category2 = new Category();
+    category2.setName("Gadgets1");
+    Product product1 = new Product();
+    product1.setName("Laptop1");
+    Product product2 = new Product();
+    product2.setName("Smartphone1");
+    Product product3 = new Product();
+    product3.setName("Tablet1");
+    // Adding products to categories
+    category1.getProducts().add(product1);
+    category1.getProducts().add(product2);
+    category2.getProducts().add(product1);
+    category2.getProducts().add(product2);
+    category2.getProducts().add(product3);
+    // Adding categories to products
+    product1.getCategories().add(category1);
+    product1.getCategories().add(category2);
+    product2.getCategories().add(category1);
+    product2.getCategories().add(category2);
+    product3.getCategories().add(category2);
+    categoryService.saveCategory(category1);
+    categoryService.saveCategory(category2);
   }
 }
