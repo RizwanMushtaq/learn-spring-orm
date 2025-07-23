@@ -3,7 +3,7 @@ package com.rizwanmushtaq.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "products")
+@Table(name = "categories")
 public class Category {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

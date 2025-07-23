@@ -1,7 +1,5 @@
 package com.rizwanmushtaq;
 
-import com.rizwanmushtaq.entities.Address;
-import com.rizwanmushtaq.entities.Student;
 import com.rizwanmushtaq.services.AddressService;
 import com.rizwanmushtaq.services.LaptopService;
 import com.rizwanmushtaq.services.StudentService;
@@ -29,25 +27,25 @@ public class LearnSpringOrmApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     System.out.println("Application started...");
-    Student student = new Student();
-    student.setName("John");
-    student.setEmail("test@john.com");
-    Address address = new Address();
-    address.setStreet("123 Main St");
-    address.setCity("New York");
-    address.setState("NY");
-    address.setZipCode("10001");
-    Address address2 = new Address();
-    address2.setStreet("456 Elm St");
-    address2.setCity("Los Angeles");
-    address2.setState("CA");
-    address2.setZipCode("90001");
-    student.getAddressList().add(address);
-    student.getAddressList().add(address2);
-    address.setStudent(student);
-    address2.setStudent(student);
-    studentService.saveStudent(student);
-    System.out.println(studentService.getAllStudents());
-    System.out.println(addressService.getAllAddresses());
+//    Student student = new Student();
+//    student.setName("John");
+//    student.setEmail("test@john.com");
+//    Address address = new Address();
+//    address.setStreet("123 Main St");
+//    address.setCity("New York");
+//    address.setState("NY");
+//    address.setZipCode("10001");
+//    Address address2 = new Address();
+//    address2.setStreet("456 Elm St");
+//    address2.setCity("Los Angeles");
+//    address2.setState("CA");
+//    address2.setZipCode("90001");
+//    student.getAddressList().add(address);
+//    student.getAddressList().add(address2);
+//    address.setStudent(student);
+//    address2.setStudent(student);
+//    studentService.saveStudent(student);
+//    System.out.println(studentService.getAllStudents());
+//    System.out.println(addressService.getAllAddresses());
   }
 }
